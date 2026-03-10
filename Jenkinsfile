@@ -84,6 +84,8 @@ pipeline {
                     powershell '$env:DOCKER_PASS | docker login -u $env:DOCKER_USER --password-stdin docker.io'
                     script {
                         def tags = buildTags()
+                        echo "Pushing ${env.IMAGE_REPO}:${tags.versionTag}"
+                        echo "Pushing ${env.IMAGE_REPO}:${tags.commitTag}"
                         powershell "docker push ${env.IMAGE_REPO}:${tags.versionTag}"
                         powershell "docker push ${env.IMAGE_REPO}:${tags.commitTag}"
                         if (env.BRANCH_NAME == 'main') {
