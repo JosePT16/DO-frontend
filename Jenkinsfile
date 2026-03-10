@@ -80,6 +80,8 @@ pipeline {
             }
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+                    powershell 'Write-Host "DOCKER_USER=$env:DOCKER_USER"'
+                    powershell 'Write-Host ("DOCKER_PASS length=" + $env:DOCKER_PASS.Length)'
                     powershell 'docker logout'
                     powershell '$env:DOCKER_PASS | docker login -u $env:DOCKER_USER --password-stdin docker.io'
                     script {
