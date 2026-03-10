@@ -80,7 +80,8 @@ pipeline {
             }
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
-                    powershell 'echo $env:DOCKER_PASS | docker login -u $env:DOCKER_USER --password-stdin'
+                    powershell 'docker logout'
+                    powershell '$env:DOCKER_PASS | docker login -u $env:DOCKER_USER --password-stdin docker.io'
                     script {
                         def tags = buildTags()
                         powershell "docker push ${env.IMAGE_REPO}:${tags.versionTag}"

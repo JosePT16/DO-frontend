@@ -1,0 +1,489 @@
+Started by user admin
+Connecting to https://api.github.com with no credentials, anonymous access
+Obtained Jenkinsfile from cad65e4cff6f6dcc27197dc4b8f2a1c9b3c853f2
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in C:\Users\josep\.jenkins\workspace\DO-frontend_develop
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+The recommended git tool is: NONE
+No credentials specified
+ > git.exe rev-parse --resolve-git-dir C:\Users\josep\.jenkins\workspace\DO-frontend_develop\.git # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/JosePT16/DO-frontend.git # timeout=10
+Fetching without tags
+Fetching upstream changes from https://github.com/JosePT16/DO-frontend.git
+ > git.exe --version # timeout=10
+ > git --version # 'git version 2.47.1.windows.1'
+ > git.exe fetch --no-tags --force --progress -- https://github.com/JosePT16/DO-frontend.git +refs/heads/develop:refs/remotes/origin/develop # timeout=10
+Checking out Revision cad65e4cff6f6dcc27197dc4b8f2a1c9b3c853f2 (develop)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f cad65e4cff6f6dcc27197dc4b8f2a1c9b3c853f2 # timeout=10
+Commit message: "Fix Jenkins image tag generation"
+ > git.exe rev-list --no-walk cad65e4cff6f6dcc27197dc4b8f2a1c9b3c853f2 # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] timestamps
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] checkout
+[2026-03-10T04:49:52.504Z] The recommended git tool is: NONE
+[2026-03-10T04:49:52.505Z] No credentials specified
+[2026-03-10T04:49:52.506Z]  > git.exe rev-parse --resolve-git-dir C:\Users\josep\.jenkins\workspace\DO-frontend_develop\.git # timeout=10
+[2026-03-10T04:49:52.624Z] Fetching changes from the remote Git repository
+[2026-03-10T04:49:52.650Z]  > git.exe config remote.origin.url https://github.com/JosePT16/DO-frontend.git # timeout=10
+[2026-03-10T04:49:52.847Z] Fetching without tags
+[2026-03-10T04:49:52.847Z] Fetching upstream changes from https://github.com/JosePT16/DO-frontend.git
+[2026-03-10T04:49:52.848Z]  > git.exe --version # timeout=10
+[2026-03-10T04:49:52.968Z]  > git --version # 'git version 2.47.1.windows.1'
+[2026-03-10T04:49:52.968Z]  > git.exe fetch --no-tags --force --progress -- https://github.com/JosePT16/DO-frontend.git +refs/heads/develop:refs/remotes/origin/develop # timeout=10
+[2026-03-10T04:49:53.663Z] Checking out Revision cad65e4cff6f6dcc27197dc4b8f2a1c9b3c853f2 (develop)
+[2026-03-10T04:49:53.663Z]  > git.exe config core.sparsecheckout # timeout=10
+[2026-03-10T04:49:53.799Z]  > git.exe checkout -f cad65e4cff6f6dcc27197dc4b8f2a1c9b3c853f2 # timeout=10
+[2026-03-10T04:49:53.877Z] Commit message: "Fix Jenkins image tag generation"
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] powershell
+[2026-03-10T04:50:20.757Z] powershell.exe : npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async 
+[2026-03-10T04:50:20.758Z] requests by a key value, which is much more comprehensive and powerful.
+[2026-03-10T04:50:20.758Z] At C:\Users\josep\.jenkins\workspace\DO-frontend_develop@tmp\durable-5635b443\powershellWrapper.ps1:3 char:1
+[2026-03-10T04:50:20.758Z] + & powershell -NoProfile -NonInteractive -ExecutionPolicy Bypass -Comm ...
+[2026-03-10T04:50:20.758Z] + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[2026-03-10T04:50:20.758Z]     + CategoryInfo          : NotSpecified: (npm warn deprec...e and powerful.:String) [], RemoteException
+[2026-03-10T04:50:20.758Z]     + FullyQualifiedErrorId : NativeCommandError
+[2026-03-10T04:50:20.758Z]  
+[2026-03-10T04:50:20.758Z] npm warn deprecated @babel/plugin-proposal-numeric-separator@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use 
+[2026-03-10T04:50:20.758Z] @babel/plugin-transform-numeric-separator instead.
+[2026-03-10T04:50:20.758Z] npm warn deprecated @babel/plugin-proposal-private-methods@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use 
+[2026-03-10T04:50:20.758Z] @babel/plugin-transform-private-methods instead.
+[2026-03-10T04:50:20.758Z] npm warn deprecated @babel/plugin-proposal-nullish-coalescing-operator@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please 
+[2026-03-10T04:50:20.758Z] use @babel/plugin-transform-nullish-coalescing-operator instead.
+[2026-03-10T04:50:20.758Z] npm warn deprecated @babel/plugin-proposal-class-properties@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use 
+[2026-03-10T04:50:20.758Z] @babel/plugin-transform-class-properties instead.
+[2026-03-10T04:50:20.758Z] npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+[2026-03-10T04:50:20.758Z] npm warn deprecated stable@0.1.8: Modern JS already guarantees Array#sort() is a stable sort, so this library is deprecated. See the compatibility table on MDN: 
+[2026-03-10T04:50:20.758Z] https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#browser_compatibility
+[2026-03-10T04:50:20.758Z] npm warn deprecated @babel/plugin-proposal-private-property-in-object@7.21.11: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please 
+[2026-03-10T04:50:20.758Z] use @babel/plugin-transform-private-property-in-object instead.
+[2026-03-10T04:50:20.758Z] npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+[2026-03-10T04:50:20.758Z] npm warn deprecated @babel/plugin-proposal-optional-chaining@7.21.0: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use 
+[2026-03-10T04:50:20.758Z] @babel/plugin-transform-optional-chaining instead.
+[2026-03-10T04:50:20.758Z] npm warn deprecated glob@7.2.3: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. 
+[2026-03-10T04:50:20.758Z] Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+[2026-03-10T04:50:20.758Z] npm warn deprecated rollup-plugin-terser@7.0.2: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-terser
+[2026-03-10T04:50:20.758Z] npm warn deprecated whatwg-encoding@1.0.5: Use @exodus/bytes instead for a more spec-conformant and faster implementation
+[2026-03-10T04:50:20.758Z] npm warn deprecated q@1.5.1: You or someone you depend on is using Q, the JavaScript Promise library that gave JavaScript developers strong feelings about promises. They can almost certainly 
+[2026-03-10T04:50:20.758Z] migrate to the native JavaScript promise now. Thank you literally everyone for joining me in this bet against the odds. Be excellent to each other.
+[2026-03-10T04:50:20.758Z] npm warn deprecated
+[2026-03-10T04:50:20.758Z] npm warn deprecated (For a CapTP with native promises, see @endo/eventual-send and @endo/captp)
+[2026-03-10T04:50:21.020Z] npm warn deprecated abab@2.0.6: Use your platform's native atob() and btoa() methods instead
+[2026-03-10T04:50:21.958Z] npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+[2026-03-10T04:50:21.958Z] npm warn deprecated domexception@2.0.1: Use your platform's native DOMException instead
+[2026-03-10T04:50:22.405Z] npm warn deprecated sourcemap-codec@1.4.8: Please use @jridgewell/sourcemap-codec instead
+[2026-03-10T04:50:22.407Z] npm warn deprecated w3c-hr-time@1.0.2: Use your platform's native performance.now() and performance.timeOrigin.
+[2026-03-10T04:50:24.937Z] npm warn deprecated workbox-cacheable-response@6.6.0: workbox-background-sync@6.6.0
+[2026-03-10T04:50:25.194Z] npm warn deprecated source-map@0.8.0-beta.0: The work that was done in this beta branch won't be included in future versions
+[2026-03-10T04:50:25.194Z] npm warn deprecated workbox-google-analytics@6.6.0: It is not compatible with newer versions of GA starting with v4, as long as you are using GAv3 it should be ok, but the package is not 
+[2026-03-10T04:50:25.194Z] longer being maintained
+[2026-03-10T04:50:29.646Z] npm warn deprecated svgo@1.3.2: This SVGO version is no longer supported. Upgrade to v2.x.x.
+[2026-03-10T04:50:37.770Z] npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+[2026-03-10T04:50:47.726Z] 
+[2026-03-10T04:50:47.726Z] added 1301 packages, and audited 1302 packages in 51s
+[2026-03-10T04:50:47.726Z] 
+[2026-03-10T04:50:47.726Z] 268 packages are looking for funding
+[2026-03-10T04:50:47.726Z]   run `npm fund` for details
+[2026-03-10T04:50:47.726Z] 
+[2026-03-10T04:50:47.726Z] 26 vulnerabilities (9 low, 3 moderate, 14 high)
+[2026-03-10T04:50:47.726Z] 
+[2026-03-10T04:50:47.726Z] To address issues that do not require attention, run:
+[2026-03-10T04:50:47.726Z]   npm audit fix
+[2026-03-10T04:50:47.726Z] 
+[2026-03-10T04:50:47.726Z] To address all issues (including breaking changes), run:
+[2026-03-10T04:50:47.726Z]   npm audit fix --force
+[2026-03-10T04:50:47.726Z] 
+[2026-03-10T04:50:47.726Z] Run `npm audit` for details.
+[Pipeline] powershell
+[2026-03-10T04:50:49.195Z] 
+[2026-03-10T04:50:49.195Z] > ecommerce-frontend@1.0.0 build
+[2026-03-10T04:50:49.195Z] > react-scripts build
+[2026-03-10T04:50:49.195Z] 
+[2026-03-10T04:50:50.568Z] powershell.exe : (node:23824) [DEP0176] DeprecationWarning: fs.F_OK is deprecated, use fs.constants.F_OK instead
+[2026-03-10T04:50:50.568Z] At C:\Users\josep\.jenkins\workspace\DO-frontend_develop@tmp\durable-67c8d1a8\powershellWrapper.ps1:3 char:1
+[2026-03-10T04:50:50.569Z] + & powershell -NoProfile -NonInteractive -ExecutionPolicy Bypass -Comm ...
+[2026-03-10T04:50:50.569Z] + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[2026-03-10T04:50:50.569Z]     + CategoryInfo          : NotSpecified: ((node:23824) [D...ts.F_OK instead:String) [], RemoteException
+[2026-03-10T04:50:50.569Z]     + FullyQualifiedErrorId : NativeCommandError
+[2026-03-10T04:50:50.569Z]  
+[2026-03-10T04:50:50.569Z] (Use `node --trace-deprecation ...` to show where the warning was created)
+[2026-03-10T04:50:50.569Z] Creating an optimized production build...
+[2026-03-10T04:50:58.695Z] Compiled successfully.
+[2026-03-10T04:50:58.695Z] 
+[2026-03-10T04:50:58.695Z] File sizes after gzip:
+[2026-03-10T04:50:58.695Z] 
+[2026-03-10T04:50:58.695Z]   59.8 kB  build\static\js\main.910f2ae0.js
+[2026-03-10T04:50:58.695Z] 
+[2026-03-10T04:50:58.695Z] The project was built assuming it is hosted at /.
+[2026-03-10T04:50:58.695Z] You can control this with the homepage field in your package.json.
+[2026-03-10T04:50:58.695Z] 
+[2026-03-10T04:50:58.695Z] The build folder is ready to be deployed.
+[2026-03-10T04:50:58.695Z] You may serve it with a static server:
+[2026-03-10T04:50:58.695Z] 
+[2026-03-10T04:50:58.695Z]   npm install -g serve
+[2026-03-10T04:50:58.695Z]   serve -s build
+[2026-03-10T04:50:58.695Z] 
+[2026-03-10T04:50:58.695Z] Find out more about deployment here:
+[2026-03-10T04:50:58.695Z] 
+[2026-03-10T04:50:58.695Z]   https://cra.link/deployment
+[2026-03-10T04:50:58.695Z] 
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Test)
+[Pipeline] powershell
+[2026-03-10T04:51:00.343Z] 
+[2026-03-10T04:51:00.344Z] > ecommerce-frontend@1.0.0 test
+[2026-03-10T04:51:00.344Z] > react-scripts test --watchAll=false --passWithNoTests
+[2026-03-10T04:51:00.344Z] 
+[2026-03-10T04:51:01.285Z] No tests found, exiting with code 0
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Container Build)
+[Pipeline] powershell
+[2026-03-10T04:51:02.932Z] Workspace diagnostics
+[2026-03-10T04:51:02.932Z] 
+[Pipeline] powershell
+[2026-03-10T04:51:04.399Z] Docker diagnostics
+[2026-03-10T04:51:04.399Z] josep\josep
+[2026-03-10T04:51:04.399Z] Client:
+[2026-03-10T04:51:04.399Z]  Version:           28.0.4
+[2026-03-10T04:51:04.399Z]  API version:       1.48
+[2026-03-10T04:51:04.399Z]  Go version:        go1.23.7
+[2026-03-10T04:51:04.399Z]  Git commit:        b8034c0
+[2026-03-10T04:51:04.399Z]  Built:             Tue Mar 25 15:07:48 2025
+[2026-03-10T04:51:04.399Z]  OS/Arch:           windows/amd64
+[2026-03-10T04:51:04.399Z]  Context:           desktop-linux
+[2026-03-10T04:51:04.399Z] 
+[2026-03-10T04:51:04.399Z] Server: Docker Desktop 4.40.0 (187762)
+[2026-03-10T04:51:04.399Z]  Engine:
+[2026-03-10T04:51:04.399Z]   Version:          28.0.4
+[2026-03-10T04:51:04.399Z]   API version:      1.48 (minimum version 1.24)
+[2026-03-10T04:51:04.399Z]   Go version:       go1.23.7
+[2026-03-10T04:51:04.399Z]   Git commit:       6430e49
+[2026-03-10T04:51:04.399Z]   Built:            Tue Mar 25 15:07:22 2025
+[2026-03-10T04:51:04.399Z]   OS/Arch:          linux/amd64
+[2026-03-10T04:51:04.399Z]   Experimental:     false
+[2026-03-10T04:51:04.399Z]  containerd:
+[2026-03-10T04:51:04.399Z]   Version:          1.7.26
+[2026-03-10T04:51:04.399Z]   GitCommit:        753481ec61c7c8955a23d6ff7bc8e4daed455734
+[2026-03-10T04:51:04.399Z]  runc:
+[2026-03-10T04:51:04.399Z]   Version:          1.2.5
+[2026-03-10T04:51:04.399Z]   GitCommit:        v1.2.5-0-g59923ef
+[2026-03-10T04:51:04.399Z]  docker-init:
+[2026-03-10T04:51:04.399Z]   Version:          0.19.0
+[2026-03-10T04:51:04.399Z]   GitCommit:        de40ad0
+[2026-03-10T04:51:04.672Z] Client:
+[2026-03-10T04:51:04.672Z]  Version:    28.0.4
+[2026-03-10T04:51:04.672Z]  Context:    desktop-linux
+[2026-03-10T04:51:04.672Z]  Debug Mode: false
+[2026-03-10T04:51:04.672Z]  Plugins:
+[2026-03-10T04:51:04.672Z]   ai: Docker AI Agent - Ask Gordon (Docker Inc.)
+[2026-03-10T04:51:04.672Z]     Version:  v1.1.3
+[2026-03-10T04:51:04.672Z]     Path:     C:\Program Files\Docker\cli-plugins\docker-ai.exe
+[2026-03-10T04:51:04.672Z]   buildx: Docker Buildx (Docker Inc.)
+[2026-03-10T04:51:04.672Z]     Version:  v0.22.0-desktop.1
+[2026-03-10T04:51:04.672Z]     Path:     C:\Program Files\Docker\cli-plugins\docker-buildx.exe
+[2026-03-10T04:51:04.672Z]   cloud: Docker Cloud (Docker Inc.)
+[2026-03-10T04:51:04.672Z]     Version:  0.2.20
+[2026-03-10T04:51:04.672Z]     Path:     C:\Program Files\Docker\cli-plugins\docker-cloud.exe
+[2026-03-10T04:51:04.672Z]   compose: Docker Compose (Docker Inc.)
+[2026-03-10T04:51:04.672Z]     Version:  v2.34.0-desktop.1
+[2026-03-10T04:51:04.672Z]     Path:     C:\Program Files\Docker\cli-plugins\docker-compose.exe
+[2026-03-10T04:51:04.672Z]   debug: Get a shell into any image or container (Docker Inc.)
+[2026-03-10T04:51:04.672Z]     Version:  0.0.38
+[2026-03-10T04:51:04.672Z]     Path:     C:\Program Files\Docker\cli-plugins\docker-debug.exe
+[2026-03-10T04:51:04.672Z]   desktop: Docker Desktop commands (Beta) (Docker Inc.)
+[2026-03-10T04:51:04.672Z]     Version:  v0.1.6
+[2026-03-10T04:51:04.672Z]     Path:     C:\Program Files\Docker\cli-plugins\docker-desktop.exe
+[2026-03-10T04:51:04.672Z]   dev: Docker Dev Environments (Docker Inc.)
+[2026-03-10T04:51:04.672Z]     Version:  v0.1.2
+[2026-03-10T04:51:04.672Z]     Path:     C:\Program Files\Docker\cli-plugins\docker-dev.exe
+[2026-03-10T04:51:04.672Z]   extension: Manages Docker extensions (Docker Inc.)
+[2026-03-10T04:51:04.672Z]     Version:  v0.2.27
+[2026-03-10T04:51:04.672Z]     Path:     C:\Program Files\Docker\cli-plugins\docker-extension.exe
+[2026-03-10T04:51:04.672Z]   init: Creates Docker-related starter files for your project (Docker Inc.)
+[2026-03-10T04:51:04.672Z]     Version:  v1.4.0
+[2026-03-10T04:51:04.672Z]     Path:     C:\Program Files\Docker\cli-plugins\docker-init.exe
+[2026-03-10T04:51:04.672Z]   sbom: View the packaged-based Software Bill Of Materials (SBOM) for an image (Anchore Inc.)
+[2026-03-10T04:51:04.672Z]     Version:  0.6.0
+[2026-03-10T04:51:04.672Z]     Path:     C:\Program Files\Docker\cli-plugins\docker-sbom.exe
+[2026-03-10T04:51:04.672Z]   scout: Docker Scout (Docker Inc.)
+[2026-03-10T04:51:04.672Z]     Version:  v1.17.0
+[2026-03-10T04:51:04.672Z]     Path:     C:\Program Files\Docker\cli-plugins\docker-scout.exe
+[2026-03-10T04:51:04.672Z] 
+[2026-03-10T04:51:04.672Z] Server:
+[2026-03-10T04:51:04.672Z]  Containers: 0
+[2026-03-10T04:51:04.672Z]   Running: 0
+[2026-03-10T04:51:04.672Z]   Paused: 0
+[2026-03-10T04:51:04.672Z]   Stopped: 0
+[2026-03-10T04:51:04.672Z]  Images: 13
+[2026-03-10T04:51:04.672Z]  Server Version: 28.0.4
+[2026-03-10T04:51:04.672Z]  Storage Driver: overlay2
+[2026-03-10T04:51:04.672Z]   Backing Filesystem: extfs
+[2026-03-10T04:51:04.672Z]   Supports d_type: true
+[2026-03-10T04:51:04.672Z]   Using metacopy: false
+[2026-03-10T04:51:04.672Z]   Native Overlay Diff: true
+[2026-03-10T04:51:04.672Z]   userxattr: false
+[2026-03-10T04:51:04.672Z]  Logging Driver: json-file
+[2026-03-10T04:51:04.672Z]  Cgroup Driver: cgroupfs
+[2026-03-10T04:51:04.672Z]  Cgroup Version: 1
+[2026-03-10T04:51:04.672Z]  Plugins:
+[2026-03-10T04:51:04.672Z]   Volume: local
+[2026-03-10T04:51:04.672Z]   Network: bridge host ipvlan macvlan null overlay
+[2026-03-10T04:51:04.672Z]   Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+[2026-03-10T04:51:04.672Z]  CDI spec directories:
+[2026-03-10T04:51:04.672Z]   /etc/cdi
+[2026-03-10T04:51:04.672Z]   /var/run/cdi
+[2026-03-10T04:51:04.672Z]  Swarm: inactive
+[2026-03-10T04:51:04.672Z]  Runtimes: io.containerd.runc.v2 nvidia runc
+[2026-03-10T04:51:04.672Z]  Default Runtime: runc
+[2026-03-10T04:51:04.672Z]  Init Binary: docker-init
+[2026-03-10T04:51:04.672Z]  containerd version: 753481ec61c7c8955a23d6ff7bc8e4daed455734
+[2026-03-10T04:51:04.672Z]  runc version: v1.2.5-0-g59923ef
+[2026-03-10T04:51:04.672Z]  init version: de40ad0
+[2026-03-10T04:51:04.672Z]  Security Options:
+[2026-03-10T04:51:04.672Z]   seccomp
+[2026-03-10T04:51:04.672Z]    Profile: unconfined
+[2026-03-10T04:51:04.672Z]  Kernel Version: 5.15.167.4-microsoft-standard-WSL2
+[2026-03-10T04:51:04.672Z]  Operating System: Docker Desktop
+[2026-03-10T04:51:04.672Z]  OSType: linux
+[2026-03-10T04:51:04.672Z]  Architecture: x86_64
+[2026-03-10T04:51:04.672Z]  CPUs: 12
+[2026-03-10T04:51:04.672Z]  Total Memory: 7.591GiB
+[2026-03-10T04:51:04.672Z]  Name: docker-desktop
+[2026-03-10T04:51:04.672Z]  ID: c9560b89-dbee-4096-b7bd-88d960b2e687
+[2026-03-10T04:51:04.672Z]  Docker Root Dir: /var/lib/docker
+[2026-03-10T04:51:04.672Z]  Debug Mode: false
+[2026-03-10T04:51:04.672Z]  HTTP Proxy: http.docker.internal:3128
+[2026-03-10T04:51:04.672Z]  HTTPS Proxy: http.docker.internal:3128
+[2026-03-10T04:51:04.672Z]  No Proxy: hubproxy.docker.internal
+[2026-03-10T04:51:04.672Z]  Labels:
+[2026-03-10T04:51:04.672Z]   com.docker.desktop.address=npipe://\\.\pipe\docker_cli
+[2026-03-10T04:51:04.672Z]  Experimental: false
+[2026-03-10T04:51:04.672Z]  Insecure Registries:
+[2026-03-10T04:51:04.672Z]   hubproxy.docker.internal:5555
+[2026-03-10T04:51:04.672Z]   ::1/128
+[2026-03-10T04:51:04.672Z]   127.0.0.0/8
+[2026-03-10T04:51:04.672Z]  Live Restore Enabled: false
+[2026-03-10T04:51:04.672Z] 
+[2026-03-10T04:51:04.672Z] powershell.exe : WARNING: No blkio throttle.read_bps_device support
+[2026-03-10T04:51:04.672Z] At C:\Users\josep\.jenkins\workspace\DO-frontend_develop@tmp\durable-71738185\powershellWrapper.ps1:3 char:1
+[2026-03-10T04:51:04.672Z] + & powershell -NoProfile -NonInteractive -ExecutionPolicy Bypass -Comm ...
+[2026-03-10T04:51:04.672Z] + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[2026-03-10T04:51:04.672Z]     + CategoryInfo          : NotSpecified: (WARNING: No blk..._device support:String) [], RemoteException
+[2026-03-10T04:51:04.672Z]     + FullyQualifiedErrorId : NativeCommandError
+[2026-03-10T04:51:04.672Z]  
+[2026-03-10T04:51:04.672Z] WARNING: No blkio throttle.write_bps_device support
+[2026-03-10T04:51:04.672Z] WARNING: No blkio throttle.read_iops_device support
+[2026-03-10T04:51:04.672Z] WARNING: No blkio throttle.write_iops_device support
+[2026-03-10T04:51:04.672Z] WARNING: DOCKER_INSECURE_NO_IPTABLES_RAW is set
+[2026-03-10T04:51:04.672Z] WARNING: daemon is not using the default seccomp profile
+[Pipeline] script
+[Pipeline] {
+[Pipeline] powershell
+[2026-03-10T04:51:07.448Z] powershell.exe : #0 building with "desktop-linux" instance using docker driver
+[2026-03-10T04:51:07.448Z] At C:\Users\josep\.jenkins\workspace\DO-frontend_develop@tmp\durable-4e0e378b\powershellWrapper.ps1:3 char:1
+[2026-03-10T04:51:07.448Z] + & powershell -NoProfile -NonInteractive -ExecutionPolicy Bypass -Comm ...
+[2026-03-10T04:51:07.448Z] + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[2026-03-10T04:51:07.448Z]     + CategoryInfo          : NotSpecified: (#0 building wit...g docker driver:String) [], RemoteException
+[2026-03-10T04:51:07.448Z]     + FullyQualifiedErrorId : NativeCommandError
+[2026-03-10T04:51:07.448Z]  
+[2026-03-10T04:51:07.448Z] 
+[2026-03-10T04:51:07.448Z] #1 [internal] load build definition from Dockerfile
+[2026-03-10T04:51:07.448Z] #1 transferring dockerfile: 162B 0.0s done
+[2026-03-10T04:51:07.448Z] #1 DONE 0.0s
+[2026-03-10T04:51:07.448Z] 
+[2026-03-10T04:51:07.448Z] #2 [internal] load metadata for docker.io/library/node:18-alpine
+[2026-03-10T04:51:07.448Z] #2 ...
+[2026-03-10T04:51:07.448Z] 
+[2026-03-10T04:51:07.448Z] #3 [auth] library/node:pull token for registry-1.docker.io
+[2026-03-10T04:51:07.448Z] #3 DONE 0.0s
+[2026-03-10T04:51:07.448Z] 
+[2026-03-10T04:51:07.448Z] #2 [internal] load metadata for docker.io/library/node:18-alpine
+[2026-03-10T04:51:07.710Z] #2 DONE 0.7s
+[2026-03-10T04:51:07.711Z] 
+[2026-03-10T04:51:07.711Z] #4 [internal] load .dockerignore
+[2026-03-10T04:51:07.711Z] #4 transferring context: 80B 0.0s done
+[2026-03-10T04:51:07.711Z] #4 DONE 0.1s
+[2026-03-10T04:51:07.711Z] 
+[2026-03-10T04:51:07.711Z] #5 [1/5] FROM docker.io/library/node:18-alpine@sha256:8d6421d663b4c28fd3ebc498332f249011d118945588d0a35cb9bc4b8ca09d9e
+[2026-03-10T04:51:07.711Z] #5 DONE 0.0s
+[2026-03-10T04:51:07.711Z] 
+[2026-03-10T04:51:07.711Z] #6 [internal] load build context
+[2026-03-10T04:51:07.973Z] #6 transferring context: 54.86kB 0.0s done
+[2026-03-10T04:51:07.973Z] #6 DONE 0.1s
+[2026-03-10T04:51:07.973Z] 
+[2026-03-10T04:51:07.973Z] #7 [4/5] RUN npm ci
+[2026-03-10T04:51:07.973Z] #7 CACHED
+[2026-03-10T04:51:07.973Z] 
+[2026-03-10T04:51:07.973Z] #8 [2/5] WORKDIR /app
+[2026-03-10T04:51:07.973Z] #8 CACHED
+[2026-03-10T04:51:07.973Z] 
+[2026-03-10T04:51:07.973Z] #9 [3/5] COPY package*.json ./
+[2026-03-10T04:51:07.973Z] #9 CACHED
+[2026-03-10T04:51:07.973Z] 
+[2026-03-10T04:51:07.973Z] #10 [4/5] RUN npm ci
+[2026-03-10T04:51:07.973Z] #10 CACHED
+[2026-03-10T04:51:07.973Z] 
+[2026-03-10T04:51:07.973Z] #11 [5/5] COPY . .
+[2026-03-10T04:51:07.973Z] #11 DONE 0.1s
+[2026-03-10T04:51:07.973Z] 
+[2026-03-10T04:51:07.973Z] #12 exporting to image
+[2026-03-10T04:51:07.973Z] #12 exporting layers 0.1s done
+[2026-03-10T04:51:07.973Z] #12 writing image sha256:bce57dad65b63c1b2547dfe4b74bd0c7a2f82ff517056c792266df0ed5e3779d done
+[2026-03-10T04:51:07.973Z] #12 naming to docker.io/library/do-frontend:9 0.0s done
+[2026-03-10T04:51:07.973Z] #12 naming to docker.io/joseptz/do-frontend:develop-9 0.0s done
+[2026-03-10T04:51:07.973Z] #12 naming to docker.io/joseptz/do-frontend:git-cad65e4
+[2026-03-10T04:51:07.973Z] #12 naming to docker.io/joseptz/do-frontend:git-cad65e4 0.0s done
+[2026-03-10T04:51:08.229Z] #12 DONE 0.1s
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Security Scan)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] powershell
+[2026-03-10T04:51:35.176Z] powershell.exe : 2026-03-10T04:51:32.634Z	[34mINFO[0m	Need to update DB
+[2026-03-10T04:51:35.176Z] At C:\Users\josep\.jenkins\workspace\DO-frontend_develop@tmp\durable-4c1973da\powershellWrapper.ps1:3 char:1
+[2026-03-10T04:51:35.176Z] + & powershell -NoProfile -NonInteractive -ExecutionPolicy Bypass -Comm ...
+[2026-03-10T04:51:35.176Z] + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[2026-03-10T04:51:35.176Z]     + CategoryInfo          : NotSpecified: (2026-03-10T04:5...ed to update DB:String) [], RemoteException
+[2026-03-10T04:51:35.176Z]     + FullyQualifiedErrorId : NativeCommandError
+[2026-03-10T04:51:35.176Z]  
+[2026-03-10T04:51:35.176Z] 2026-03-10T04:51:32.634Z	[34mINFO[0m	DB Repository: ghcr.io/aquasecurity/trivy-db:2
+[2026-03-10T04:51:35.176Z] 2026-03-10T04:51:32.634Z	[34mINFO[0m	Downloading DB...
+[2026-03-10T04:51:57.112Z] 1.32 MiB / 87.21 MiB [>______________________________________________________________] 1.51% ? p/s ?3.63 MiB / 87.21 MiB [-->____________________________________________________________] 
+[2026-03-10T04:51:57.113Z] 4.16% ? p/s ?5.60 MiB / 87.21 MiB [---->__________________________________________________________] 6.42% ? p/s ?6.76 MiB / 87.21 MiB [--->_______________________________________________] 
+[2026-03-10T04:51:57.113Z] 7.75% 9.06 MiB p/s ETA 8s9.12 MiB / 87.21 MiB [----->____________________________________________] 10.46% 9.06 MiB p/s ETA 8s11.19 MiB / 87.21 MiB 
+[2026-03-10T04:51:57.113Z] [------>__________________________________________] 12.83% 9.06 MiB p/s ETA 8s13.34 MiB / 87.21 MiB [------->_________________________________________] 15.30% 9.19 MiB p/s ETA 8s15.40 MiB / 
+[2026-03-10T04:51:57.113Z] 87.21 MiB [-------->________________________________________] 17.66% 9.19 MiB p/s ETA 7s16.83 MiB / 87.21 MiB [--------->_______________________________________] 19.29% 9.19 MiB p/s ETA 
+[2026-03-10T04:51:57.113Z] 7s19.01 MiB / 87.21 MiB [---------->______________________________________] 21.79% 9.20 MiB p/s ETA 7s21.06 MiB / 87.21 MiB [----------->_____________________________________] 24.14% 9.20 MiB 
+[2026-03-10T04:51:57.113Z] p/s ETA 7s23.46 MiB / 87.21 MiB [------------->___________________________________] 26.90% 9.20 MiB p/s ETA 6s24.48 MiB / 87.21 MiB [------------->___________________________________] 28.06% 
+[2026-03-10T04:51:57.113Z] 9.20 MiB p/s ETA 6s27.31 MiB / 87.21 MiB [--------------->_________________________________] 31.31% 9.20 MiB p/s ETA 6s29.74 MiB / 87.21 MiB 
+[2026-03-10T04:51:57.113Z] [---------------->________________________________] 34.10% 9.20 MiB p/s ETA 6s31.98 MiB / 87.21 MiB [----------------->_______________________________] 36.67% 9.41 MiB p/s ETA 5s34.14 MiB / 
+[2026-03-10T04:51:57.113Z] 87.21 MiB [------------------->_____________________________] 39.14% 9.41 MiB p/s ETA 5s36.32 MiB / 87.21 MiB [-------------------->____________________________] 41.64% 9.41 MiB p/s ETA 
+[2026-03-10T04:51:57.113Z] 5s38.51 MiB / 87.21 MiB [--------------------->___________________________] 44.16% 9.51 MiB p/s ETA 5s40.57 MiB / 87.21 MiB [---------------------->__________________________] 46.52% 9.51 MiB 
+[2026-03-10T04:51:57.113Z] p/s ETA 4s42.66 MiB / 87.21 MiB [----------------------->_________________________] 48.91% 9.51 MiB p/s ETA 4s44.67 MiB / 87.21 MiB [------------------------->_______________________] 51.22% 
+[2026-03-10T04:51:57.113Z] 9.56 MiB p/s ETA 4s46.67 MiB / 87.21 MiB [-------------------------->______________________] 53.51% 9.56 MiB p/s ETA 4s48.61 MiB / 87.21 MiB 
+[2026-03-10T04:51:57.113Z] [--------------------------->_____________________] 55.74% 9.56 MiB p/s ETA 4s50.61 MiB / 87.21 MiB [---------------------------->____________________] 58.03% 9.58 MiB p/s ETA 3s52.73 MiB / 
+[2026-03-10T04:51:57.113Z] 87.21 MiB [----------------------------->___________________] 60.46% 9.58 MiB p/s ETA 3s54.92 MiB / 87.21 MiB [------------------------------>__________________] 62.97% 9.58 MiB p/s ETA 
+[2026-03-10T04:51:57.113Z] 3s56.66 MiB / 87.21 MiB [------------------------------->_________________] 64.96% 9.61 MiB p/s ETA 3s58.56 MiB / 87.21 MiB [-------------------------------->________________] 67.14% 9.61 MiB 
+[2026-03-10T04:51:57.113Z] p/s ETA 2s59.60 MiB / 87.21 MiB [--------------------------------->_______________] 68.34% 9.61 MiB p/s ETA 2s61.20 MiB / 87.21 MiB [---------------------------------->______________] 70.18% 
+[2026-03-10T04:51:57.113Z] 9.48 MiB p/s ETA 2s63.04 MiB / 87.21 MiB [----------------------------------->_____________] 72.29% 9.48 MiB p/s ETA 2s65.17 MiB / 87.21 MiB 
+[2026-03-10T04:51:57.113Z] [------------------------------------>____________] 74.73% 9.48 MiB p/s ETA 2s67.35 MiB / 87.21 MiB [------------------------------------->___________] 77.23% 9.53 MiB p/s ETA 2s69.43 MiB / 
+[2026-03-10T04:51:57.113Z] 87.21 MiB [--------------------------------------->_________] 79.61% 9.53 MiB p/s ETA 1s71.39 MiB / 87.21 MiB [---------------------------------------->________] 81.86% 9.53 MiB p/s ETA 
+[2026-03-10T04:51:57.113Z] 1s73.28 MiB / 87.21 MiB [----------------------------------------->_______] 84.03% 9.55 MiB p/s ETA 1s74.77 MiB / 87.21 MiB [------------------------------------------>______] 85.74% 9.55 MiB 
+[2026-03-10T04:51:57.113Z] p/s ETA 1s76.45 MiB / 87.21 MiB [------------------------------------------>______] 87.67% 9.55 MiB p/s ETA 1s78.59 MiB / 87.21 MiB [-------------------------------------------->____] 90.11% 
+[2026-03-10T04:51:57.113Z] 9.51 MiB p/s ETA 0s80.61 MiB / 87.21 MiB [--------------------------------------------->___] 92.43% 9.51 MiB p/s ETA 0s82.44 MiB / 87.21 MiB 
+[2026-03-10T04:51:57.113Z] [---------------------------------------------->__] 94.53% 9.51 MiB p/s ETA 0s84.27 MiB / 87.21 MiB [----------------------------------------------->_] 96.62% 9.50 MiB p/s ETA 0s86.76 MiB / 
+[2026-03-10T04:51:57.113Z] 87.21 MiB [------------------------------------------------>] 99.48% 9.50 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 9.50 MiB p/s ETA 
+[2026-03-10T04:51:57.113Z] 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 9.21 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 9.21 MiB 
+[2026-03-10T04:51:57.113Z] p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 9.21 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 
+[2026-03-10T04:51:57.113Z] 8.61 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 8.61 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 
+[2026-03-10T04:51:57.113Z] 100.00% 8.61 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 8.06 MiB p/s ETA 0s87.21 MiB / 87.21 MiB 
+[2026-03-10T04:51:57.113Z] [----------------------------------------------->] 100.00% 8.06 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 8.06 MiB p/s ETA 0s87.21 MiB / 
+[2026-03-10T04:51:57.113Z] 87.21 MiB [----------------------------------------------->] 100.00% 7.54 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 7.54 MiB p/s ETA 
+[2026-03-10T04:51:57.113Z] 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 7.54 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 7.05 MiB 
+[2026-03-10T04:51:57.113Z] p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 7.05 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 
+[2026-03-10T04:51:57.113Z] 7.05 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 6.59 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 
+[2026-03-10T04:51:57.113Z] 100.00% 6.59 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 6.59 MiB p/s ETA 0s87.21 MiB / 87.21 MiB 
+[2026-03-10T04:51:57.113Z] [----------------------------------------------->] 100.00% 6.17 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 6.17 MiB p/s ETA 0s87.21 MiB / 
+[2026-03-10T04:51:57.113Z] 87.21 MiB [----------------------------------------------->] 100.00% 6.17 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 5.77 MiB p/s ETA 
+[2026-03-10T04:51:57.113Z] 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 5.77 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 5.77 MiB 
+[2026-03-10T04:51:57.113Z] p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 5.40 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 
+[2026-03-10T04:51:57.113Z] 5.40 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 5.40 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 
+[2026-03-10T04:51:57.113Z] 100.00% 5.05 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 5.05 MiB p/s ETA 0s87.21 MiB / 87.21 MiB 
+[2026-03-10T04:51:57.113Z] [----------------------------------------------->] 100.00% 5.05 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 4.72 MiB p/s ETA 0s87.21 MiB / 
+[2026-03-10T04:51:57.113Z] 87.21 MiB [----------------------------------------------->] 100.00% 4.72 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 4.72 MiB p/s ETA 
+[2026-03-10T04:51:57.113Z] 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 4.42 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 4.42 MiB 
+[2026-03-10T04:51:57.113Z] p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 4.42 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 
+[2026-03-10T04:51:57.113Z] 4.13 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 4.13 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 
+[2026-03-10T04:51:57.113Z] 100.00% 4.13 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 3.87 MiB p/s ETA 0s87.21 MiB / 87.21 MiB 
+[2026-03-10T04:51:57.113Z] [----------------------------------------------->] 100.00% 3.87 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 3.87 MiB p/s ETA 0s87.21 MiB / 
+[2026-03-10T04:51:57.113Z] 87.21 MiB [----------------------------------------------->] 100.00% 3.62 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 3.62 MiB p/s ETA 
+[2026-03-10T04:51:57.113Z] 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 3.62 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 3.39 MiB 
+[2026-03-10T04:51:57.113Z] p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 3.39 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 
+[2026-03-10T04:51:57.113Z] 3.39 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 3.17 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 
+[2026-03-10T04:51:57.113Z] 100.00% 3.17 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 3.17 MiB p/s ETA 0s87.21 MiB / 87.21 MiB 
+[2026-03-10T04:51:57.113Z] [----------------------------------------------->] 100.00% 2.96 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 2.96 MiB p/s ETA 0s87.21 MiB / 
+[2026-03-10T04:51:57.113Z] 87.21 MiB [----------------------------------------------->] 100.00% 2.96 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 2.77 MiB p/s ETA 
+[2026-03-10T04:51:57.113Z] 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 2.77 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 2.77 MiB 
+[2026-03-10T04:51:57.113Z] p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 2.59 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 
+[2026-03-10T04:51:57.114Z] 2.59 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 2.59 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 
+[2026-03-10T04:51:57.114Z] 100.00% 2.43 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 2.43 MiB p/s ETA 0s87.21 MiB / 87.21 MiB 
+[2026-03-10T04:51:57.114Z] [----------------------------------------------->] 100.00% 2.43 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 2.27 MiB p/s ETA 0s87.21 MiB / 
+[2026-03-10T04:51:57.114Z] 87.21 MiB [----------------------------------------------->] 100.00% 2.27 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 2.27 MiB p/s ETA 
+[2026-03-10T04:51:57.114Z] 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 2.12 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 2.12 MiB 
+[2026-03-10T04:51:57.114Z] p/s ETA 0s87.21 MiB / 87.21 MiB [----------------------------------------------->] 100.00% 2.12 MiB p/s ETA 0s87.21 MiB / 87.21 MiB [---------------------------------------------------] 
+[2026-03-10T04:51:57.114Z] 100.00% 3.86 MiB p/s 23s2026-03-10T04:51:55.988Z	[34mINFO[0m	Vulnerability scanning is enabled
+[2026-03-10T04:51:57.114Z] 2026-03-10T04:51:55.989Z	[34mINFO[0m	Secret scanning is enabled
+[2026-03-10T04:51:57.114Z] 2026-03-10T04:51:55.989Z	[34mINFO[0m	If your scanning is slow, please try '--scanners vuln' to disable secret scanning
+[2026-03-10T04:51:57.114Z] 2026-03-10T04:51:55.989Z	[34mINFO[0m	Please see also https://aquasecurity.github.io/trivy/v0.50/docs/scanner/secret/#recommendation for faster secret detection
+[2026-03-10T04:53:33.578Z] 2026-03-10T04:53:27.496Z	[34mINFO[0m	Detected OS: alpine
+[2026-03-10T04:53:33.578Z] 2026-03-10T04:53:27.496Z	[33mWARN[0m	This OS version is not on the EOL list: alpine 3.21
+[2026-03-10T04:53:33.578Z] 2026-03-10T04:53:27.496Z	[34mINFO[0m	Detecting Alpine vulnerabilities...
+[2026-03-10T04:53:33.578Z] 2026-03-10T04:53:27.505Z	[34mINFO[0m	Number of language-specific files: 1
+[2026-03-10T04:53:33.578Z] 2026-03-10T04:53:27.505Z	[34mINFO[0m	Detecting node-pkg vulnerabilities...
+[2026-03-10T04:53:33.578Z] 2026-03-10T04:53:27.604Z	[34mINFO[0m	Table result includes only package filenames. Use '--format json' option to get the full path to the package file.
+[Pipeline] }
+[Pipeline] // script
+Post stage
+[Pipeline] archiveArtifacts
+[2026-03-10T04:53:33.662Z] Archiving artifacts
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Container Push)
+[Pipeline] withCredentials
+[2026-03-10T04:53:33.834Z] Masking supported pattern matches of %DOCKER_PASS%
+[Pipeline] {
+[Pipeline] powershell
+[2026-03-10T04:53:35.771Z] powershell.exe : Error response from daemon: Get "https://registry-1.docker.io/v2/": unauthorized: incorrect username or password
+[2026-03-10T04:53:35.771Z] At C:\Users\josep\.jenkins\workspace\DO-frontend_develop@tmp\durable-f546c4a1\powershellWrapper.ps1:3 char:1
+[2026-03-10T04:53:35.771Z] + & powershell -NoProfile -NonInteractive -ExecutionPolicy Bypass -Comm ...
+[2026-03-10T04:53:35.771Z] + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[2026-03-10T04:53:35.771Z]     + CategoryInfo          : NotSpecified: (Error response ...ame or password:String) [], RemoteException
+[2026-03-10T04:53:35.771Z]     + FullyQualifiedErrorId : NativeCommandError
+[2026-03-10T04:53:35.771Z]  
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy)
+Stage "Deploy" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // timestamps
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+ERROR: script returned exit code 1
+Finished: FAILURE
