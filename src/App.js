@@ -38,7 +38,6 @@ function App() {
     return (
         <div>
             <h1>E-Commerce Store</h1>
-            <p>Phase 6 demo build from the develop branch is running.</p>
             <h2>Products</h2>
             <div>
                 {products.map(product => (
