@@ -37,7 +37,7 @@ function App() {
 
     return (
         <div>
-            <h1>E-Commerce Store</h1>
+            <h1>E-Commerce Store </h1>
             <h2>Products</h2>
             <div>
                 {products.map(product => (
