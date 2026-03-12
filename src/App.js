@@ -4,8 +4,17 @@ import axios from 'axios';
 function App() {
     const [products, setProducts] = useState([]);
     const [orders, setOrders] = useState([]);
-    const productBaseUrl = process.env.REACT_APP_PRODUCT_URL || 'http://localhost:3001';
-    const orderBaseUrl = process.env.REACT_APP_ORDER_URL || 'http://localhost:3002';
+    const browserHost = typeof window !== 'undefined' ? window.location.hostname : 'localhost';
+    const productBaseUrl = process.env.REACT_APP_PRODUCT_URL || (
+        browserHost === 'localhost'
+            ? 'http://localhost:3001'
+            : `http://${browserHost}:30081`
+    );
+    const orderBaseUrl = process.env.REACT_APP_ORDER_URL || (
+        browserHost === 'localhost'
+            ? 'http://localhost:3002'
+            : `http://${browserHost}:30082`
+    );
 
     useEffect(() => {
         // Fetch products
